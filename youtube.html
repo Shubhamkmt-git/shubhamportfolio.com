@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Thumbnail Showcase</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {background: linear-gradient(135deg, #ffffff, #ffffff); font-family: 'Segoe UI', sans-serif; color: #000; display: flex; flex-direction: column; min-height: 100vh;}
+header {width: 100%; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: rgb(255, 115, 0); color: #fff; position: fixed; top: 0; left: 0; z-index: 1000;}
+.back-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px; /* increased for bold feel */
+    font-weight: 700; /* boldness */
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    padding: 8px;
+    margin-left: -25px;
+}
+.back-btn:hover {
+    color: #000000;
+    transform: scale(1.2);
+}
+.title {font-size: 20px; font-weight: bold; display: flex; align-items: center; gap: 10px;}
+.title i {font-size: 24px; color: #fff;}
+.gallery {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 100px 40px 40px 40px;}
+.card {background: rgb(103, 83, 76); border-radius: 20px; overflow: hidden; box-shadow: 0 0 20px rgba(255, 106, 0, 0.5); color: #fff; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;}
+.card:hover {transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 106, 0, 0.7);}
+.card img {width: 100%; height: auto;}
+.card-content {padding: 20px;}
+.card-content h3 {margin-bottom: 10px;}
+.card-content p {font-size: 14px; line-height: 1.4;}
+#lightbox {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 9999;}
+#lightbox-header {width: 100%; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: rgb(255, 115, 0); color: #fff;}
+#lightbox-header .title {display: flex; align-items: center; gap: 10px;}
+#lightbox-header .title i {font-size: 24px; color: #fff;}
+#lightbox img {max-width: 90%; max-height: 70vh; margin-top: 20px;}
+.lightbox-controls {margin-top: auto; margin-bottom: 20px; display: flex; justify-content: center; gap: 20px;}
+.lightbox-controls button {background: #ff7300; border: none; padding: 10px 20px; color: #fff; font-size: 16px; border-radius: 10px; cursor: pointer;}
+.lightbox-controls button:hover {background: #ff8800;}
+</style>
+</head>
+<body>
+<header><button class="back-btn" onclick="window.location.href='index.html.html'">
+    <i class="fas fa-arrow-left"></i>
+</button><div class="title"><i class="fab fa-youtube"></i>YOUTUBE THUMBNAILS</div></header>
+<div class="gallery">
+<div class="card" onclick="openLightbox(0)"><img src="thumb1.jpg" alt="YouTube Thumbnail 1"><div class="card-content"><h3>Video Title 1</h3><p>Thumbnail for YouTube video about design tips and creative workflows for content creators.</p></div></div>
+<div class="card" onclick="openLightbox(1)"><img src="thumb2.jpg" alt="YouTube Thumbnail 2"><div class="card-content"><h3>Video Title 2</h3><p>Eye-catching thumbnail designed for a motivational video, optimized for YouTube CTR.</p></div></div>
+<div class="card" onclick="openLightbox(2)"><img src="thumb3.jpg" alt="YouTube Thumbnail 3"><div class="card-content"><h3>Video Title 3</h3><p>Bright, engaging thumbnail for a travel vlog showcasing clear branding and colors.</p></div></div>
+</div>
+<div id="lightbox">
+    <div id="lightbox-header">
+        <button class="back-btn" onclick="closeLightbox()">⬅ Back</button>
+        <div class="title"><i class="fab fa-youtube"></i>THUMBNAIL PREVIEW</div>
+    </div>
+    <img id="lightbox-img" src="" alt="Thumbnail Preview">
+    <div class="lightbox-controls">
+        <button onclick="prevImage()">⬅ Previous</button>
+        <button onclick="nextImage()">Next ➡</button>
+    </div>
+</div>
+<script>
+const images = ['thumb1.jpg', 'thumb2.jpg', 'thumb3.jpg'];
+let currentIndex = 0;
+function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+    document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+}
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+}
+document.getElementById('lightbox').addEventListener('click', function(e){
+    if(e.target.id === 'lightbox') closeLightbox();
+});
+document.addEventListener('keydown', function(e){
+    if(document.getElementById('lightbox').style.display === 'flex') {
+        if(e.key === 'ArrowRight') nextImage();
+        if(e.key === 'ArrowLeft') prevImage();
+        if(e.key === 'Escape') closeLightbox();
+    }
+});
+</script>
+<footer style="width: 100%; background: #2f2f2f; color: #e0e0e0; text-align: center; padding: 25px 15px; font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+    <p style="font-size: 18px; font-weight: 600; color: #ffffff;">Shubham Portfolio | Graphic Designer</p>
+    <p style="max-width: 600px; margin: 10px auto; line-height: 1.5;">
+        Crafting creative, elegant, and impactful designs that elevate your brand while capturing your audience's attention with visually compelling storytelling.
+    </p>
+    <div style="margin: 15px 0;">
+        <a href="hello.agdesigner@gmail.com" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">Email</a> |
+        <a href="https://wa.me/919462794522" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">WhatsApp</a> |
+        <a href="tel:+919680290425" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">Call</a>
+    </div>
+    <p style="font-size: 14px; color: #aaaaaa; margin-top: 10px;">© 2025 Shubham Portfolio. All rights reserved.</p>
+</footer>
+</body>
+</html>

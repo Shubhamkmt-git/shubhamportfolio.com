@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffffff, #fefefe, #ffffff);
+    color: #ffffff;
+  }
+  header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 115, 0, 0.877);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 77, 0, 0.1);
+  }
+  .back-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px; /* increased for bold feel */
+    font-weight: 700; /* boldness */
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    padding: 8px;
+    margin-left: -25px;
+}
+.back-btn:hover {
+    color: #000000;
+    transform: scale(1.2);
+}
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+  .container {
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 136, 0, 0.345);
+  }
+  .container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(255, 136, 0);
+  }
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .contact-links a {
+    text-decoration: none;
+    background-color: rgb(255, 136, 0);
+    color: #000000;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .contact-links a:hover {
+    background-color: rgb(255, 136, 0);
+  }
+  .contact-links i {
+    margin-right: 8px;
+  }
+  .floating-icons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+  }
+  .floating-icons a {
+    background: rgb(255, 136, 0)f;
+    color: black;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(255, 136, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .floating-icons a:hover {
+    background: rgb(255, 136, 0);
+  } */
+   
+</style>
+</head>
+<body>
+
+<header>
+  <button class="back-btn" onclick="window.location.href='index.html.html'">
+    <i class="fas fa-arrow-left"></i>
+</button>
+  <div class="title">PORTFOLIO</div>
+</header>
+
+<div class="container">
+  <h1>Contact Me</h1>
+  <p style="text-align: center; font-size: 16px; color: #ff6600;">Feel free to reach out to me directly using the links below.</p>
+
+  <div class="contact-links">
+    <a href="tel:+919680290425"><i class="fas fa-phone"></i> Call Me</a>
+    <a href="https://wa.me/919462794522" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    <a href="hello.agdesigner@email.com"><i class="fas fa-envelope"></i> Email Me</a>
+    <a href="https://www.instagram.com/ag_design_er?igsh=cW82dGVpZmszaGc0" target="_blank"><i class="fab fa-instagram"></i> Instagram Profile</a>
+  </div>
+</div>
+
+<!-- Floating Action Icons -->
+<div class="floating-icons">
+  <a href="tel:+919680290425" title="Call Me"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/91 9462794522" title="WhatsApp Chat" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+<footer style="width: 100%; background: #2f2f2f; color: #e0e0e0; text-align: center; padding: 25px 15px; font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+    <p style="font-size: 18px; font-weight: 600; color: #ffffff;">Shubham Portfolio | Graphic Designer</p>
+    <p style="max-width: 600px; margin: 10px auto; line-height: 1.5;">
+        Crafting creative, elegant, and impactful designs that elevate your brand while capturing your audience's attention with visually compelling storytelling.
+    </p>
+    <div style="margin: 15px 0;">
+        <a href="hello.agdesigner@gmail.com" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">Email</a> |
+        <a href="https://wa.me/919462794522" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">WhatsApp</a> |
+        <a href="tel:+919680290425" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">Call</a>
+    </div>
+    <p style="font-size: 14px; color: #aaaaaa; margin-top: 10px;">© 2025 Shubham Portfolio. All rights reserved.</p>
+</footer>
+</body>
+</html>

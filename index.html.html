@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Portfolio</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff);
+    font-family: 'Segoe UI', sans-serif;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+header {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(255, 115, 0);
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.back-btn {
+    background: none;
+    border: 2px solid #ffffff;
+    padding: 8px 16px;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+.back-btn:hover {
+    background: #ffffff;
+    color: #ff8800;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+}
+.bar-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.square, .squareb {
+    flex: 1;
+    height: 4px;
+    background-color: #ff7300;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 8px;
+}
+.text {
+    font-size: 24px;
+    color: #ff7300;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+.about1 {
+    color: black; 
+    font-size: 30px; 
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+.about0 {
+    color: rgb(52, 52, 52);
+    font-size: 18px;
+    max-width: 980px;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.6;
+}
+.port{
+    font-size: 60px;
+    color:rgb(52, 52, 52) ;
+}
+.logo-folio{
+    height: auto;
+    width: 50%;
+    margin-left: -43%;
+}
+
+.view-btn {
+    background: #ff7700;
+    border: 2px solid #ffffff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+    margin: 30px 0;}
+.view-btn:hover {
+    background: #ffffff;
+    color: #ff8800;
+    border: 2px solid #ff8800;}
+.invitation{
+    color: #2c2c2c;
+    font-size: 100PX;
+    margin-left: -55%;
+}
+.adv{
+    color: #2c2c2c;
+    font-size: 100PX;
+    margin-left: -40%;
+}
+.thumbnail{
+    color: #2c2c2c;
+    font-size: 100PX;
+    margin-left: -55%;
+}
+
+
+ @media (max-width:autofill) {
+    .header{ width: 100%;}
+    .logo-folio {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-folio img:first-child {
+        width: 100%;
+        height: auto;
+    }
+    .logo-folio > div {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 20px auto 0 auto !important;
+        max-width: 100% !important;
+        min-width: unset !important;
+    }
+    .logo-folio > div img {
+        width: 100% !important;
+        border-radius: 10px;
+    }
+    .invit-mob img {
+        width: 80% !important;
+        margin: 20px auto 0 auto !important;
+        display: block;
+    }
+    .invitation, .adv, .thumbnail {
+        font-size: 50px;
+        margin-left: 0;
+        text-align: center;
+    }
+    .invitation p, .adv p, .thumbnail p {
+        text-align: center !important;
+    }
+    .port p {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 22px;
+    }
+    .text {
+        font-size: 22px;
+    }
+    .about1 {
+        font-size: 26px;
+    }
+    .about0 {
+        font-size: 16px;
+    }
+    .port {
+        font-size: 40px;
+    }
+}
+.menu-list {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #ffffff;
+    border: 2px solid #ff7300;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 20;
+}
+.menu-list a {
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s, color 0.3s;
+}
+.menu-list a:last-child {
+    border-bottom: none;
+}
+.menu-list a:hover {
+    background: #ff7300;
+    color: #ffffff;
+}
+
+
+
+</style>
+</head>
+<body>
+   <header>
+    <div class="title">Shubham</div>
+   <div style="position: relative;">
+    <button class="back-btn" onclick="toggleMenu()">☰</button>
+    <button class="back-btn" onclick="window.location.href='contact.html'">Contact</button>
+    <button class="back-btn" onclick="window.location.href='hire.html'">Hire</button>
+    <div class="menu-list" id="menuList">
+        <a href="branding.html">Branding & logo</a>
+        <a href="ADVERTISEMENT.html">Ads &  marketing</a>
+        <a href="YOUTUBE.html">Thumbnail</a>
+        <a href="invitation.html">Invitation</a>
+    </div>
+</div>
+
+</header>
+
+    <img src="main image.png" alt="Main Portfolio Image" class="img">
+
+    <div class="bar-container">
+        <div class="square"></div>
+        <div class="text"><b style="font-size: 32px;">Graphic Designer</b></div>
+        <div class="squareb"></div>
+    </div>
+
+    <div class="about1"> 
+        <p><b><u>About me</u></b></p>
+    </div>
+    <div class="about0">
+        <p>
+            <b>I am a Creative and Experienced Graphic Designer with 2 years of expertise in delivering high-quality designs. My skills span across all types of design work, with a proven track record in crafting effective funnel designs that drive results. Passionate about helping businesses grow through impactful visuals and strategic design.</b>
+        </p>
+    </div> 
+    <div class="port">
+        <!-- <p style="color:rgb(52, 52, 52) ; font-size: 45px; font-family:cursive;">My</p> -->
+        <P><b> MY PORTFOLIO</b></P>
+        <P style="font-size: 35px; font-family:monospace; margin-left: 282px; margin-top: -18px;"><b>SHOWCASE</b></P>
+        <p style="color: #ff8800; font-size: 25px; font-family: monospace; margin-left: 77px;"> <b>CREATIVE, IMPECTFUL DESIGN</b></p>
+        <p style="font-size: 14px; font-family:Arial, Helvetica, sans-serif; margin-left: 77px;"><b>TAILORED TO CAPTIVATE AUDIENCES AND DELIVER</b></p>
+        <p style="color: #ff8800; font-size: 20px; font-family: monospace; margin-left: 238px;"> <b>MEASURABLE RESULTS</b></p>
+    </div>
+    <div class="logo-folio" >
+        <img src="logo ph.png" alt="logo folio">
+     <div style="flex: 1; min-width: 700px; max-width: 800px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: -50%;margin-left: 700px;">
+        <img src="RAM.jpg" alt="Project 1" style="width: 100%; border-radius: 10px;">
+        <img src="RAM.jpg" alt="Project 2" style="width: 100%; border-radius: 10px;">
+        <img src="RAM.jpg" alt="Project 3" style="width: 100%; border-radius: 10px;">
+        <img src="RAM.jpg" alt="Project 4" style="width: 100%; border-radius: 10px;">
+    </div>
+</div>
+    </div>
+    <div><button class="view-btn" onclick="window.location.href='branding.html'">View MORE</button></div>
+    <div class="invitation">
+     <b><P>INVITATION</P> 
+        <P style="color: #ff7700;margin-top: -25px;">DESIGN</P>   
+     </b>
+     <b><p style="font-size: 18px; text-align: left;">I design elegant and personalized wedding <br>
+        Invitations that beautifully capture love, <br>style and celebration-making every <br>wedding unforgettable</p></b>
+    </div>
+    <div class="invit-mob">
+         <img src="mobin.png" alt="Project 1" style="width: 40%; border-radius: 10px; margin-left: 50%; margin-top: -35%;">
+    </div>
+        <div><button class="view-btn" onclick="window.location.href='invitation.html'">View MORE</button></div>
+
+
+     <div class="adv">
+     <b><P>ADVERTISEMENT</P> 
+        <P style="color: #ff7700;margin-top: -25px;">CAMPAIGN</P> 
+        <P style="color: #ff7700;margin-top: -25px;">POST</P>   
+     </b>
+     <b><p style="font-size: 18px; text-align: left;">I design elegant and personalized wedding <br>
+        Invitations that beautifully capture love, <br>style and celebration-making every <br>wedding unforgettable</p></b>
+    </div>
+    <div class="invit-mob">
+         <img src="adv.png" alt="advertise" style="width: 40%; border-radius: 10px; margin-left: 60%; margin-top: -40%;">
+    </div>
+        <div><button class="view-btn" onclick="window.location.href='ADVERTISEMENT.html'">View MORE</button></div>
+
+         <div class="thumbnail">
+     <b><P>VIDEO</P> 
+        <P style="color: #ff7700;margin-top: -25px;">THUMBNAIL</P> 
+        <P style="color: #ff7700;margin-top: -25px;">(YOUTUBE)</P>   
+     </b>
+     <b><p style="font-size: 18px; text-align: left;">We blend creativity and elegance to design scroll-stopping,<br> 
+        engaging thumbnails that not only attract viewers instantly <br> but also reflect your brand’s unique story and professionalism 
+        <br> with every pixel</p></b>
+    </div>
+    <div class="invit-mob">
+         <img src="thumbnail.jpg" alt="sample thumbnail" style="width: 50%; border-radius: 10px; margin-left: 50%; margin-top: -40%;">
+    </div>
+        <div><button class="view-btn" onclick="window.location.href='YOUTUBE.html'">View MORE</button></div>
+<footer style="width: 100%; background: #2f2f2f; color: #e0e0e0; text-align: center; padding: 25px 15px; font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+    <p style="font-size: 18px; font-weight: 600; color: #ffffff;">Shubham Portfolio | Graphic Designer</p>
+    <p style="max-width: 600px; margin: 10px auto; line-height: 1.5;">
+        Crafting creative, elegant, and impactful designs that elevate your brand while capturing your audience's attention with visually compelling storytelling.
+    </p>
+    <div style="margin: 15px 0;">
+        <a href="hello.agdesigner@gmail.com" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">Email</a> |
+        <a href="https://wa.me/919462794522" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">WhatsApp</a> |
+        <a href="tel:+919680290425" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">Call</a>
+    </div>
+    <p style="font-size: 14px; color: #aaaaaa; margin-top: 10px;">© 2025 Shubham Portfolio. All rights reserved.</p>
+</footer>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menuList');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('menuList');
+    const button = document.querySelector('.back-btn[onclick="toggleMenu()"]');
+    if (menu.style.display === 'flex' && !menu.contains(event.target) && event.target !== button) {
+        menu.style.display = 'none';
+    }
+});
+</script>
+
+
+
+
+</body>
+</html>

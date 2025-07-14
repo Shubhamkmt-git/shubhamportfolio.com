@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Client Inquiry Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff);
+        font-family: 'Segoe UI', sans-serif;
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    header {
+        width: 100%;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(255, 115, 0);
+        color: #ffffff;
+    }
+   .back-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px; /* increased for bold feel */
+    font-weight: 700; /* boldness */
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    padding: 8px;
+    margin-left: -25px;
+}
+.back-btn:hover {
+    color: #000000;
+    transform: scale(1.2);
+}
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .form-card {
+        background: rgb(40, 13, 4);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 40px rgba(255, 106, 0, 0.541);
+        width: 90%;
+        max-width: 400px;
+        margin: 40px auto;
+        color: #ffffff;
+    }
+    .form-card h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+    }
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(45deg, #ff6a00, #ff8800);
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        color: #ffffff;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .submit-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #ff6a00;
+    }
+     @media (max-width:autofill) {
+    .header{ width: 100%;}}
+</style>
+</head>
+<body>
+
+<header>
+<button class="back-btn" onclick="window.location.href='index.html.html'">
+    <i class="fas fa-arrow-left"></i>
+</button>    <div class="title">PORTFOLIO</div>
+</header>
+
+<div class="form-card">
+    <h1>Your Detials</h1>
+    <form id="clientForm">
+        <div class="form-group">
+            <label>Company/Firm Name</label>
+            <input type="text" id="company" required>
+        </div>
+        <div class="form-group">
+            <label>Profession</label>
+            <input type="text" id="work" required>
+        </div>
+        <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <textarea id="address" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label>Instagram ID</label>
+            <input type="text" id="instagram">
+        </div>
+        <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="tel" id="mobilenumber" required>
+        </div>
+        <button type="submit" class="submit-btn">Submit via WhatsApp</button>
+    </form>
+</div>
+
+<script>
+document.getElementById('clientForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let company = document.getElementById('company').value;
+    let work = document.getElementById('work').value;
+    let name = document.getElementById('name').value;
+    let address = document.getElementById('address').value;
+    let email = document.getElementById('email').value;
+    let instagram = document.getElementById('instagram').value;
+    let mobilenumber = document.getElementById('mobilenumber').value;
+
+    let message = `Client Inquiry:%0A
+Company/Firm Name: ${company}%0A
+Work Type: ${work}%0A
+Name: ${name}%0A
+Address: ${address}%0A
+Email: ${email}%0A
+Instagram ID: ${instagram}%0A
+Mobile Number: ${mobilenumber}`;
+
+    let phoneNumber = "919462794522"; // Your WhatsApp number without + sign
+    let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    window.open(whatsappURL, '_blank');
+});
+</script>
+<footer style="width: 100%; background: #2f2f2f; color: #e0e0e0; text-align: center; padding: 25px 15px; font-family: 'Segoe UI', sans-serif; font-size: 16px;">
+    <p style="font-size: 18px; font-weight: 600; color: #ffffff;">Shubham Portfolio | Graphic Designer</p>
+    <p style="max-width: 600px; margin: 10px auto; line-height: 1.5;">
+        Crafting creative, elegant, and impactful designs that elevate your brand while capturing your audience's attention with visually compelling storytelling.
+    </p>
+    <div style="margin: 15px 0;">
+        <a href="hello.agdesigner@gmail.com" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">Email</a> |
+        <a href="https://wa.me/919462794522" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">WhatsApp</a> |
+        <a href="tel:+919680290425" style="color: #cccccc; text-decoration: none; margin: 0 12px; transition: color 0.3s;">Call</a>
+    </div>
+    <p style="font-size: 14px; color: #aaaaaa; margin-top: 10px;">© 2025 Shubham Portfolio. All rights reserved.</p>
+</footer>
+</body>
+</html>
